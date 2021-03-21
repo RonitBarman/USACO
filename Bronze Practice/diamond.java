@@ -4,11 +4,11 @@ import java.util.*;
 public class diamond {
 
     public static void main(String[] args) throws IOException {
-        // BufferedReader in = new BufferedReader(new FileReader("diamond.in"));
-        // PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("diamond.out")));
+        BufferedReader in = new BufferedReader(new FileReader("diamond.in"));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("diamond.out")));
 
-        BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\ronit\\RandomJava\\USACO\\diamondcollector\\in2.txt"));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\ronit\\RandomJava\\USACO\\diamondcollector\\out.txt")));
+        //BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\ronit\\RandomJava\\USACO\\diamondcollector\\in2.txt"));
+        //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("C:\\Users\\ronit\\RandomJava\\USACO\\diamondcollector\\out.txt")));
 
 
         StringTokenizer st = new StringTokenizer(in.readLine());

@@ -1,6 +1,0 @@
-static String isPartial(ArrayList<Integer> ar1, ArrayList<Integer> ar2) {
-        for (int i = 0; i < ar1.size(); i++) {
-            if (ar2.contains(ar1.get(i))) return ar1.get(i);
-        }
-        return "notThere";
-}

@@ -10,7 +10,6 @@ public class p1 {
             String[] temp = in.readLine().split(" ");
             int x = Integer.parseInt(temp[0]);
             int y = Integer.parseInt(temp[1]);
-            
         }
 
     }

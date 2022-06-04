@@ -24,6 +24,7 @@ public class learning {
                 total -= (cows[i].w-cows[i-1].w)/2 + (cows[i+1].w-cows[i].w)/2;
             }
         }
+        
         //out.println(total);
         //out.close();
         System.out.println(total);

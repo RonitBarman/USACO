@@ -50,7 +50,7 @@ public class countcross {
             for (int j = 0; j < k; j++) {
                 if (i != j) {
                     for (int d = 0; d < 4; d++) {
-                        if (roads.contains(o))
+                        if (roads.contains(o));
                     }
                 }
             }
@@ -72,7 +72,6 @@ public class countcross {
             i = temp.x; 
             j = temp.y;
             if (i >= n || i < 0 || j >= n || j < 0 || visited[i][j]) continue;
-            if ()
             visited[i][j] = true;   
             
             for (int t = 0; t < 4; t++) {

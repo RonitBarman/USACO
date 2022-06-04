@@ -13,9 +13,9 @@ public class mooyomooyo {
    
     
     public static void main(String[] args) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader("mooyomooyo.in"));
-        //BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("mooyomooyo.out")));
+        //BufferedReader in = new BufferedReader(new FileReader("mooyomooyo.in"));
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        //PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("mooyomooyo.out")));
         StringTokenizer st = new StringTokenizer(in.readLine());
         n = Integer.parseInt(st.nextToken());
         k = Integer.parseInt(st.nextToken());
@@ -29,7 +29,7 @@ public class mooyomooyo {
         }
         boolean noneleft = false;
         while (!noneleft) {
-            System.out.println("here");
+            //System.out.println("here");
             int none = 0;
             for (int v = 1; v <= 9; v++) {
                 for (int i = 0; i < n; i++) {
@@ -46,8 +46,9 @@ public class mooyomooyo {
                 }
                 visited = new boolean[n][10];
             }
+            printBoard();
             for (int j = 0; j < 10; j++) {
-                for (int i = n-2; i >= 0; i--) {
+                for (int i = n-1; i >= 0; i--) {
                     if (grid[i][j] > 0) {
                         for (int k = n-1; k >= 0; k--) {
                             if (grid[k][j] == 0) {
@@ -59,23 +60,33 @@ public class mooyomooyo {
                     }
                 }
             }
-            System.out.println("here");
-            if (none == n*10*9) noneleft = true;
+            printBoard();
+            System.out.println(none);
+            //System.out.println("here");
+            if (none == (n*10*9)) noneleft = true;
         }
 
         System.out.println();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < 10; j++) {
                 System.out.print(grid[i][j]);
-                out.print(grid[i][j]);
+                //out.print(grid[i][j]);
             }
-            out.print("\n");
+            //out.print("\n");
             System.out.print("\n");
         }
-        out.close();
+        //out.close();
 
     }
-
+    static void printBoard() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(grid[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println();
+    }
     static class Pair {
         int i;
         int j;
@@ -90,6 +101,8 @@ public class mooyomooyo {
     
     static boolean floodfill(int i, int j, int v) {
         int count = 0;
+        boolean bool = false;
+        if (grid[i][j] != 0) {System.out.println(i+" "+j); bool = true;}
         Stack<Pair> points = new Stack<>();
         points.push(new Pair(i, j));
         while (!points.isEmpty()) {
@@ -97,11 +110,11 @@ public class mooyomooyo {
             i = temp.i; 
             j = temp.j;
             if (i >= n || i < 0 || j >= 10 || j < 0 || grid[i][j] != v || visited[i][j]) continue;
-            if (grid[i][j] == v) count++;
+            count++;
             
             visited[i][j] = true; 
             toVisit.add(new Pair(i, j));
-            System.out.println("here");
+            //System.out.println("here");
             for (int t = 0; t < 4; t++) {
                 int i2 = i + addi[t];
                 int j2 = j + addj[t];
@@ -112,7 +125,7 @@ public class mooyomooyo {
             }
         }
         //System.out.println(count);
-        
+        if (bool) System.out.println(count);
         if (count >= k) return true;
         else return false;
     }
